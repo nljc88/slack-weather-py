@@ -44,7 +44,7 @@ for period in myweather_sum:
         myfctxt = period['fcttext_metric']
         
 
-url = "https://hooks.slack.com/services/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"
+url = "https://hooks.slack.com/services/XXX"
 payload = {'username': "%s WeatherBot" % (now.strftime("%A")), 'icon_emoji': ":robot_face:", 'attachments':[
       {
          "fallback": "Weather Report",

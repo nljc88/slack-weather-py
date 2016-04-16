@@ -4,7 +4,7 @@ import urllib2
 import datetime
 
 
-f = urllib2.urlopen('http://api.wunderground.com/api/XXXX/geolookup/conditions/q/Ontario/Toronto.json')
+f = urllib2.urlopen('http://api.wunderground.com/api/b32ef3297d82b842/geolookup/conditions/q/Ontario/Toronto.json')
 json_string = f.read()
 parsed_json = json.loads(json_string)
 location = parsed_json['location']['city']
@@ -21,7 +21,7 @@ bbq = 'FUCK YEAH BBQ TIME :hamburger: :beer:' if float(feelslike_c) > 15 and (we
 
 now = datetime.datetime.now()
 
-url = "https://hooks.slack.com/services/XXXX"
+url = "https://hooks.slack.com/services/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"
 payload = {'username': "%s WeatherBot" % (now.strftime("%A")), 'text':"<%s|%s Weather>" % (forecast_url, location), 'icon_emoji': ":robot_face:", 'attachments':[
       {
          "fallback": "Weather Report",
@@ -35,7 +35,7 @@ headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 r = requests.post(url, data=json.dumps(payload), headers=headers)   
 
 
-myweather = json.load(urllib2.urlopen("http://api.wunderground.com/api/XXXX/forecast/q/Ontario/Toronto.json"))
+myweather = json.load(urllib2.urlopen("http://api.wunderground.com/api/b32ef3297d82b842/forecast/q/Ontario/Toronto.json"))
 myweather_sum = myweather['forecast']['txt_forecast']['forecastday']
 
 for period in myweather_sum:
@@ -44,7 +44,7 @@ for period in myweather_sum:
         myfctxt = period['fcttext_metric']
         
 
-url = "https://hooks.slack.com/services/XXX"
+url = "https://hooks.slack.com/services/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"
 payload = {'username': "%s WeatherBot" % (now.strftime("%A")), 'icon_emoji': ":robot_face:", 'attachments':[
       {
          "fallback": "Weather Report",

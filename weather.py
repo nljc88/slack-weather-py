@@ -5,7 +5,6 @@ import datetime
 
 
 def get_weather_now():
-  pass
 
     f = urllib2.urlopen('http://api.wunderground.com/api/b32ef3297d82b842/geolookup/conditions/q/Ontario/Toronto.json')
     json_string = f.read()

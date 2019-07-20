@@ -31,7 +31,7 @@ def get_weather_now():
 
     now = datetime.date.today().strftime("%A")
 
-    url = "https://hooks.slack.com/services/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"
+    url = "https://hooks.slack.com/services/FUCKYOU"
     
     payload = {'username': "%s WeatherBot" % (now), 'text':"<%s|%s Weather>" % (forecast_url, location), 'icon_emoji': ":robot_face:", 
           'attachments':[
@@ -63,7 +63,7 @@ def get_weather_forecast():
     r = requests.get('http://api.wunderground.com/api/b32ef3297d82b842/forecast/q/Ontario/Toronto.json')
     data = r.json()
 
-    url = "https://hooks.slack.com/services/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"
+    url = "https://hooks.slack.com/services/FUCKYOU"
 
     payload = {'username': "%s WeatherBot" % (now), 'text':"Weather Report", 'icon_emoji': ":robot_face:", 
           'attachments':[]}
